@@ -27,7 +27,7 @@ ADD_MODIFIER = '+'.freeze
 SUB_MODIFIER = '-'.freeze
 
 def change_line_and_is_comment_line?(line, comment_token)
-  (line =~ /^\+[^+]/ || line =~ /^-[^-]/) && !line.empty? && line[1..-1].start_with?(comment_token)
+  (line =~ /^\+[^+]/ || line =~ /^-[^-]/) && !line.empty? && line[1..-1].strip.start_with?(comment_token)
 end
 
 def changed_files
